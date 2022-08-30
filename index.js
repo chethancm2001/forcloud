@@ -1,4 +1,5 @@
 const express = require('express')
+const config = require('./config/config')
 const app = express()
 const router = require("./routes/routes")
 app.use(express.json())
@@ -8,7 +9,7 @@ app.use('/',router)
 
 
 const port = process.env.PORT || 3000
-
+config()
 app.listen(port,(err)=>{
     if(!err){
         
