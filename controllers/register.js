@@ -1,5 +1,6 @@
 const userModel = require('../models/user')
 const Joi = require('joi')
+const sendemail = require('./sendgmail')
 
 
 
@@ -11,7 +12,7 @@ const Joi = require('joi')
     })
 
 
-async function register(req,res){
+async function register(req,res,next){
 let {name, email,password} = req.body
 
 let result = Schema.validate({name, email,password})
@@ -25,7 +26,9 @@ if(result.error != null){
 let user = new userModel({name,email,password})
 try{
 let result = await user.save()
-return res.send(result)
+let id = result._id
+sendemail(req,res,id)
+
 }
 catch(exp){
 

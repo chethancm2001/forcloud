@@ -13,6 +13,11 @@ let userSchema = mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    active:{
+        type:Boolean,
+        default:false,
+        required:true,
     }
 })
 let userModel = mongoose.model('Users',userSchema)
