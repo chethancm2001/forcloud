@@ -17,7 +17,8 @@ let {name, email,password} = req.body
 let result = Schema.validate({name, email,password})
 
 if(result.error != null){
-   
+   let array = result.error
+   console.log(array)
    return res.json({len: result.error.details[0].message})
 }
 
