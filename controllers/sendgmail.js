@@ -15,7 +15,7 @@ function sendemail(req,res,id){
         from: 'developer.chethan@gmail.com',
         to: req.body.email,
         subject: 'verification email',
-        text: `please verifiy this email by clicking flowing link http://localhost:3000/verification/${id}`
+        text: `please verifiy this email by clicking flowing link https://cloud-app-new.herokuapp.com/verification/${id}`
     };
      
     mailTransporter.sendMail(mailDetails, function(err, data) {
