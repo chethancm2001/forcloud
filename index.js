@@ -10,7 +10,7 @@ app.use('/',router)
 
 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 config()
 app.listen(port,(err)=>{
     if(!err){
