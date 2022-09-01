@@ -2,9 +2,6 @@ const userModel = require('../models/user')
 const Joi = require('joi')
 const sendemail = require('./sendgmail')
 
-
-
-
     let Schema = Joi.object().keys({
         name:Joi.string().min(3).required(),
         email:Joi.string().min(3).email().required(),
