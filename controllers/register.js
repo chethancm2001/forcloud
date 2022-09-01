@@ -16,8 +16,8 @@ let result = Schema.validate({name, email,password})
 
 if(result.error != null){
    let array = result.error
-   console.log(array)
-   return res.status(409)({message: result.error.details[0].message})
+   console.log(result.error.details[0])
+   return res.status(409)({"message": result.error.details[0].message})
 }
 
 let user = new userModel({name,email,password})
